@@ -3,4 +3,4 @@ from django.http import HttpResponse
 # Create your views here.
 
 def Test(request):
-    return HttpResponse('Testowa wiadmoość')
+    return HttpResponse('Testowa wiadmoość plus')
