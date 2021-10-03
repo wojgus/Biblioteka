@@ -16,9 +16,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from viewer.views import Test
+import viewer
+from viewer.views import Test, SubmittableLoginView, Test1
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('test', Test)
+    path('', Test),
+    path('login', SubmittableLoginView.as_view(), name='login'),
+    path('register', viewer.views.register, name='register'),
+    path('index', Test1)
+
 ]
