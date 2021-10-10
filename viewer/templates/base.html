@@ -20,12 +20,12 @@
         </div>
 </div>
      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="lista ksiazek">Lista książek</a><!-- Dodać tu odnośnik do podstrony -->
+        <a class="navbar-brand" href="{% url 'list_of_books' %}">Lista książek</a><!-- Dodać tu odnośnik do podstrony -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="lista ksiazek">Szukaj książek</a>
+        <a class="navbar-brand" href="{% url 'search' %}">Szukaj książek</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -35,7 +35,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
                   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="lista ksiazek">Regulamin</a>
+        <a class="navbar-brand" href="{% url 'rules' %}">Regulamin</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -50,5 +50,10 @@
      </nav>
      </nav>
      </nav>
+<div class="jumbotron">
+     {%block content%}
+
+     {%endblock%}
+</div>
 </body>
 </html>

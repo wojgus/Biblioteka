@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Dodaj film
+{%  endblock %}
+
+{% block content %}
+    <form method="post">
+        {% csrf_token %}
+        {{ form.non_field_errors }}
+        <div class="form-group col-md-4">
+            {{ form.title.errors }}
+            <label>Tytuł </label>
+            {{ form.title }}
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                {{ form.genre.errors }}
+                <label>Gatunek </label>
+                {{ form.genre }}
+            </div>
+            <div class="form-group col-md-4">
+                {{ form.ocena.errors }}
+                <label>Ocena </label>
+                {{ form.ocena }}
+            </div>
+            <div class="form-group col-md-4">
+                {{ form.rok_wydania.errors }}
+                <label>Data wydania </label>
+                {{ form.rok_wydania }}
+            </div>
+            <div class="form-group col-md-4">
+                {{ form.opis.errors }}
+                <label>Opis</label>
+                {{ form.opis }}
+            </div>
+         <div class="form-group col-md-4">
+                {{ form.autor.errors }}
+                <label>Autor</label>
+                {{ form.autor }}
+            </div>
+        </div>
+        <input type="submit" value="Wyślij" class="btn btn-primary">
+
+    </form>
+{% endblock %}

@@ -1,9 +1,13 @@
-<h1>Search Results</h1>
-
+{% extends 'base.html' %}
+{% block title %}
+<h1>wyszukiwanie</h1>
+{% endblock %}
+{% block content %}
 <ul>
-  {% for book in books_list %}
-    <li>
-      {{ book.name }}
-    </li>
-  {% endfor %}
+
+        <form action="{% url 'search' %}" method="get">
+            <input name="q" type="text" placeholder="Search...">
+        </form>
+
 </ul>
+{% endblock %}

@@ -12,8 +12,8 @@ class Autor(Model):
 
 
 class Book(Model):
-    tytul = CharField(max_length=128)
-    gatunek = ForeignKey(Genre, on_delete=DO_NOTHING)
+    title = CharField(max_length=128)
+    genre = ForeignKey(Genre, on_delete=DO_NOTHING)
     autor = ForeignKey(Autor, on_delete=DO_NOTHING)
     wydowanictwo = CharField(max_length=128)
     rok_wydania = DateField()

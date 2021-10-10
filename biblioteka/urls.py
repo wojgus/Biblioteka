@@ -17,13 +17,23 @@ from django.contrib import admin
 from django.urls import path
 
 import viewer
-from viewer.views import Test, SubmittableLoginView, Test1
+from viewer.models import Genre, Book
+from viewer.views import Test, SubmittableLoginView, Test1, BookCreateView, BookUpdateView, BookDeleteView, \
+    SearchResultsView, RulesView, Rules
+
+admin.site.register(Book)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', Test),
     path('login', SubmittableLoginView.as_view(), name='login'),
     path('register', viewer.views.register, name='register'),
-    path('index', Test1)
+    # path('index', Test1),
+    path('create', BookCreateView.as_view(), name='add_book'),
+    path('update/<pk>', BookUpdateView.as_view(), name='update_book'),
+    path('list', Test1, name='list_of_books'),
+    path('delete/<pk>', BookDeleteView.as_view(), name='delete'),
+    path('search',SearchResultsView.as_view(), name='search'),
+    path('rules',Rules, name='rules'),
 
 ]

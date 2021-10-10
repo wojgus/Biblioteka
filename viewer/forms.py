@@ -1,9 +1,8 @@
 from django.db.models import TextField
 from django.forms import (
-    ModelForm, CharField, IntegerField, DateField,
+    ModelForm, CharField, IntegerField, DateField, ModelChoiceField,
 )
-from viewer.models import Book
-
+from viewer.models import Book, Genre
 
 
 class BookForm(ModelForm):
@@ -20,4 +19,6 @@ class BookForm(ModelForm):
         super().__init__(*args, **kwargs)
         for visible in self.visible_fields():
             visible.field.widget.attrs['class'] = 'form-control'
+
+
 

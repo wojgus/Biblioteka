@@ -1,0 +1,36 @@
+{%extends 'base.html'%}
+{% block title %}
+Lista Książek
+{% endblock%}
+{% block content %}
+{% for book in books %}
+    <div class="container">
+        <div class="jumbotron">
+<div class="card-group">
+  <div class="card">
+    <img src="https://www.szkolneblogi.pl/static/media/users/private/SPmarzecice/otwarta_ksiazka.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{ book.title }}</h5>
+      <p class="card-text">{{ books.opis }}</p>
+        <a href="#" class="btn btn-primary">Szczegóły</a>
+          <a href="#" class="btn btn-primary">wypożycz</a>
+    </div>
+  </div>
+    <div class="card">
+    <img src="https://www.szkolneblogi.pl/static/media/users/private/SPmarzecice/otwarta_ksiazka.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Tytuł książki</h5>
+      <p class="card-text">Jakiś opis książki.</p>
+        <a href="#" class="btn btn-primary">Szczegóły</a>
+          <a href="#" class="btn btn-primary">wypożycz</a>
+            {% if user.is_superuser %}
+                <a href="{% url 'update' book.id %}" class="btn btn-primary">Edycja</a>
+            {% endif %}
+    </div>
+  </div>
+</div>
+        </div>
+    </div>
+
+{%endfor%}
+{% endblock %}

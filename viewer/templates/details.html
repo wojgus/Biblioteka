@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Szczegóły: {{ book.title }}
+{% endblock %}
+
+{% block content %}
+    <h1>{{ book.title }}</h1>
+    <div> <strong>Gatunek: </strong> {{ book.genre.nazwa }} </div>
+    <div> <strong>Ocena: </strong> {{ book.rating }} / 10 </div>
+    <div> <strong>Data wydania: </strong> {{ book.rok_wydania | date:'d.m.Y' }} </div>
+    <div> <strong>Opis: </strong> {{ book.opis }} </div>
+    <div> <strong>Autor: </strong> {{ book.autor.nazwisko }} </div>
+
+{% endblock %}
